@@ -1,8 +1,8 @@
 /**
   *************** (C) COPYRIGHT 2017 STMicroelectronics ************************
-  * @file      startup_stm32f103xb.s
+  * @file      startup_stm32f101xb.s
   * @author    MCD Application Team
-  * @brief     STM32F103xB Devices vector table for Atollic toolchain.
+  * @brief     STM32F101xB Devices vector table for Atollic toolchain.
   *            This module performs:
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
@@ -159,16 +159,16 @@ g_pfnVectors:
   .word DMA1_Channel5_IRQHandler
   .word DMA1_Channel6_IRQHandler
   .word DMA1_Channel7_IRQHandler
-  .word ADC1_2_IRQHandler
-  .word USB_HP_CAN1_TX_IRQHandler
-  .word USB_LP_CAN1_RX0_IRQHandler
-  .word CAN1_RX1_IRQHandler
-  .word CAN1_SCE_IRQHandler
+  .word ADC1_IRQHandler
+  .word 0
+  .word 0
+  .word 0
+  .word 0
   .word EXTI9_5_IRQHandler
-  .word TIM1_BRK_IRQHandler
-  .word TIM1_UP_IRQHandler
-  .word TIM1_TRG_COM_IRQHandler
-  .word TIM1_CC_IRQHandler
+  .word 0
+  .word 0
+  .word 0
+  .word 0
   .word TIM2_IRQHandler
   .word TIM3_IRQHandler
   .word TIM4_IRQHandler
@@ -183,7 +183,7 @@ g_pfnVectors:
   .word USART3_IRQHandler
   .word EXTI15_10_IRQHandler
   .word RTC_Alarm_IRQHandler
-  .word USBWakeUp_IRQHandler
+  .word 0
   .word 0
   .word 0
   .word 0
@@ -283,35 +283,11 @@ g_pfnVectors:
   .weak DMA1_Channel7_IRQHandler
   .thumb_set DMA1_Channel7_IRQHandler,Default_Handler
 
-  .weak ADC1_2_IRQHandler
-  .thumb_set ADC1_2_IRQHandler,Default_Handler
-
-  .weak USB_HP_CAN1_TX_IRQHandler
-  .thumb_set USB_HP_CAN1_TX_IRQHandler,Default_Handler
-
-  .weak USB_LP_CAN1_RX0_IRQHandler
-  .thumb_set USB_LP_CAN1_RX0_IRQHandler,Default_Handler
-
-  .weak CAN1_RX1_IRQHandler
-  .thumb_set CAN1_RX1_IRQHandler,Default_Handler
-
-  .weak CAN1_SCE_IRQHandler
-  .thumb_set CAN1_SCE_IRQHandler,Default_Handler
+  .weak  ADC1_IRQHandler
+  .thumb_set ADC1_IRQHandler,Default_Handler
 
   .weak EXTI9_5_IRQHandler
   .thumb_set EXTI9_5_IRQHandler,Default_Handler
-
-  .weak TIM1_BRK_IRQHandler
-  .thumb_set TIM1_BRK_IRQHandler,Default_Handler
-
-  .weak TIM1_UP_IRQHandler
-  .thumb_set TIM1_UP_IRQHandler,Default_Handler
-
-  .weak TIM1_TRG_COM_IRQHandler
-  .thumb_set TIM1_TRG_COM_IRQHandler,Default_Handler
-
-  .weak TIM1_CC_IRQHandler
-  .thumb_set TIM1_CC_IRQHandler,Default_Handler
 
   .weak TIM2_IRQHandler
   .thumb_set TIM2_IRQHandler,Default_Handler
@@ -355,8 +331,6 @@ g_pfnVectors:
   .weak RTC_Alarm_IRQHandler
   .thumb_set RTC_Alarm_IRQHandler,Default_Handler
 
-  .weak USBWakeUp_IRQHandler
-  .thumb_set USBWakeUp_IRQHandler,Default_Handler
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 
